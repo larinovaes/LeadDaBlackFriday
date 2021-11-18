@@ -1,12 +1,17 @@
 package br.com.zup.Lead.dtos;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 public class LeadDTO {
     @NotBlank
     private String nome;
+    @Email
+    @NotBlank
     private String email;
+    @Valid
     private List<ProdutoDTO> produtosDTOS;
 
     public LeadDTO() {
