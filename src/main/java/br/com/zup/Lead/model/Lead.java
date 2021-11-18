@@ -11,7 +11,7 @@ public class Lead {
     @Column(unique = true)
     private String email;
     private String nome;
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Produto> produtos;
 
     public Lead() {
