@@ -1,7 +1,5 @@
 package br.com.zup.Lead.model;
 
-import br.com.zup.Lead.dtos.ProdutoDTO;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,7 +12,7 @@ public class LeadModel {
     private String email;
     private String nome;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<ProdutoDTO> produtosDTOS;
+    private List<Produto> produtos;
 
     public LeadModel() {
     }
@@ -35,11 +33,11 @@ public class LeadModel {
         this.nome = nome;
     }
 
-    public List<ProdutoDTO> getProdutosDTOS() {
-        return produtosDTOS;
+    public List<Produto> getProdutos() {
+        return produtos;
     }
 
-    public void setProdutosDTOS(List<ProdutoDTO> produtosDTOS) {
-        this.produtosDTOS = produtosDTOS;
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 }

@@ -1,8 +1,10 @@
 package br.com.zup.Lead.dtos;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 public class LeadDTO {
+    @NotBlank
     private String nome;
     private String email;
     private List<ProdutoDTO> produtosDTOS;
