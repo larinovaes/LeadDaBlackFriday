@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "lead")
-public class LeadModel {
+public class Lead {
 
     @Id
     @Column(unique = true)
@@ -14,7 +14,7 @@ public class LeadModel {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Produto> produtos;
 
-    public LeadModel() {
+    public Lead() {
     }
 
     public String getEmail() {
