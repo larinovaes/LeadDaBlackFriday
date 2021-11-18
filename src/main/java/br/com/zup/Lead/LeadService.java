@@ -16,4 +16,9 @@ public class LeadService {
     public Lead salvarLead(Lead lead) {
         return leadRepository.save(lead);
     }
+
+    public  Lead salvarLeadComProdutos(Lead lead) {
+        produtoRepository.saveAll(lead.getProdutos());
+        return salvarLead(lead);
+    }
 }
