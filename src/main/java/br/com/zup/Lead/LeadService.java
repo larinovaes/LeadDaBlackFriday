@@ -21,12 +21,13 @@ public class LeadService {
     }
 
     public  Lead salvarLeadComProdutos(Lead lead) {
+        for (Lead leadRef: leadRepository.findAll()) {
+            if (leadRef.getEmail().equalsIgnoreCase(lead.getEmail())) {
+                atualizarListaDeProduto(lead.getProdutos(), lead);
+            }
+        }
         produtoRepository.saveAll(lead.getProdutos());
         return salvarLead(lead);
-    }
-
-    public Lead verificarLead() {
-
     }
 
     public void atualizarListaDeProduto(List<Produto> produtos, Lead lead) {

@@ -4,12 +4,10 @@ import br.com.zup.Lead.dtos.LeadDTO;
 import br.com.zup.Lead.model.Lead;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/lead")
@@ -27,4 +25,5 @@ public class LeadController {
         leadDTO = modelMapper.map(lead, LeadDTO.class);
         return leadDTO;
     }
+
 }
